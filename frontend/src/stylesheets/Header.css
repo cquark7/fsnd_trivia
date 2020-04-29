@@ -1,0 +1,23 @@
+.App-header {
+    background-color: #222;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    height: 75px;
+    padding: 20px;
+    padding-right: 40%;
+    padding-left: 5%;
+}
+
+.App-header > a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.App-header > a:first-of-type {
+    color: dodgerblue;
+    font-size: 2rem;
+    margin-bottom: 0.2rem;
+}

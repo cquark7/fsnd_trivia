@@ -1,0 +1,24 @@
+.App-intro {
+    font-size: large;
+}
+
+h2 {
+    text-align: center;
+}
+
+li {
+    text-align: center;
+    margin: 5px 0px;
+}
+
+ul {
+    list-style-type: none;
+    padding-inline-start: 0px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+}
