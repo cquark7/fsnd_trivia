@@ -86,6 +86,17 @@ class TriviaTestCase(unittest.TestCase):
         self.assertTrue(data['message'], 'Question successfully created')
         self.assertEqual(len(q), 1)
 
+    def test_add_question_error(self):
+        data = {
+            'question': 'my_question',
+            'answer': 'my_ans',
+            'category': 7,
+            'difficulty': 2
+        }
+        # Should raise an error because category 7 doesn't exist
+        res = self.client().post('/questions', json=data)
+        self.assertEqual(res.status_code, 422)
+
     def test_delete_question(self):
         res = self.client().delete('/questions/10')
         data = json.loads(res.data)
@@ -109,6 +120,10 @@ class TriviaTestCase(unittest.TestCase):
         self.assertEqual(res.status_code, 200)
         self.assertEqual(data['success'], True)
         self.assertTrue(data['questions'])
+
+    def test_search_error(self):
+        res = self.client().post('/questions/search', json={})
+        self.assertEqual(res.status_code, 422)
 
 
 # Make the tests conveniently executable
